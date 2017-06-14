@@ -19,9 +19,8 @@ vm.searchGif = function(){
 
  $http.get(searchUrl).then(function(response){
    console.log('back from search', response);
-   
+
    vm.returnSearch = response.data.data;
-   console.log(vm.returnSearch);
  })//end searchUrl
 }//end searchGif
 

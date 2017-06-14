@@ -12,17 +12,14 @@
     <div ng-controller='GiphyController as gp' class="">
       <button ng-click='gp.randomGif()' type="button" name="button">Random</button>
       <form ng-submit='gp.searchGif()' class="" >
-        <button type="button" name="button">Button</button>
         <input ng-model='gp.search' type="text" name="" value="">
       </form>
 
 
-      <div class="gifs">
+      <div class="">
         <img ng-src="{{gp.returnRandom}}" alt="">
-        <div ng-repeat='x in gp.returnSearch' class="">
-            <img ng-src="{{x.images.downsized.url}}" alt="">
-        </div>
 
+            <img ng-repeat='x in gp.returnSearch' ng-src="{{x.images.downsized.url}}" alt="">
       </div>
 
     </div>
