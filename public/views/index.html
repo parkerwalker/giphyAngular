@@ -13,18 +13,19 @@
 </head>
 <body ng-app='app'>
   <div class="container">
-    <h1>Giphy</h1>
-    <div ng-controller='GiphyController as gp' class="col-sm-4">
-      <button ng-click='gp.randomBS()' type="button" name="button">Random</button>
-      <form ng-submit='gp.searchBS()' class="" >
-        <input ng-model='gp.search' type="text" name="" value="" placeholder='Search a Gif'>
-      </form>
-
+    <h1>Giphy Search</h1>
+    <div ng-controller='GiphyController as gp' class="col-md-8 col-lg-2 form">
+      <div id="inputForm">
+        <form ng-submit='gp.searchBS()' class="form" >
+          <input ng-model='gp.search' class='input' type="text" name="" value="" placeholder='Search a Gif'>
+        </form>
+        <button ng-click='gp.randomBS()' type="button" name="button">Random</button>
+      </div>
 
       <div class="row">
-        <img ng-src="{{gp.returnRandom}}" alt="">
-        <div ng-repeat='x in gp.returnSearch' class="col-md-6">
-          <img  ng-src="{{x.images.downsized_medium.url}}" alt="" class="img-rounded">
+        <img ng-src="{{gp.returnRandom}}" class="gif" alt="">
+        <div ng-repeat='x in gp.returnSearch' class="col-md-4 searchGifs">
+          <img ng-src="{{x.images.fixed_height.url}}" alt="" class="gif">
         </div>
       </div>
 

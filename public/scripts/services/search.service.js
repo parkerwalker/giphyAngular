@@ -14,4 +14,4 @@ app.service('SearchService', function($http){
 
 
 
-})
+});//end SearchService
